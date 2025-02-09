@@ -154,7 +154,7 @@ const Maze: React.FC = () => {
         const newMaze = [...prev];
         for (let i = 0; i < MAZE_SIZE; i++) {
           for (let j = 0; j < MAZE_SIZE; j++) {
-            newMaze[i][j].reward = (j === x && i === y) ? 100 : -10;
+            newMaze[i][j].reward = (j === x && i === y) ? 1000 : -1;
           }
         }
         return newMaze;
