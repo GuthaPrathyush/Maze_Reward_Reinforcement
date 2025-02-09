@@ -46,7 +46,7 @@ const Maze: React.FC = () => {
           x,
           y,
           isWall: Math.random() < 0.2 && !(x === 0 && y === 0) && !(x === MAZE_SIZE - 1 && y === MAZE_SIZE - 1),
-          reward: x === goalPos.x && y === goalPos.y ? 1000 : -1,
+          reward: x === goalPos.x && y === goalPos.y ? 100 : -1,
           qValues: { up: 0, down: 0, left: 0, right: 0 },
         });
       }
@@ -154,7 +154,7 @@ const Maze: React.FC = () => {
         const newMaze = [...prev];
         for (let i = 0; i < MAZE_SIZE; i++) {
           for (let j = 0; j < MAZE_SIZE; j++) {
-            newMaze[i][j].reward = (j === x && i === y) ? 1000 : -1;
+            newMaze[i][j].reward = (j === x && i === y) ? 100 : -1;
           }
         }
         return newMaze;
